@@ -29,6 +29,11 @@ class AppTextStyle {
         'Gilroy', const Color.fromRGBO(24, 23, 37, 1), 14, FontWeight.w100);
   }
 
+  static TextStyle pageTitle() {
+    return _textStyle(
+        'Gilroy', const Color.fromRGBO(24, 23, 37, 1), 20, FontWeight.bold);
+  }
+
   static TextStyle _textStyle(
       String fontFamily, Color color, double size, FontWeight fontWeight) {
     return TextStyle(

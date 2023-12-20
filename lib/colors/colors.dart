@@ -8,4 +8,8 @@ class AppColors {
   static Color onbackground2() {
     return const Color.fromRGBO(130, 130, 130, 1);
   }
+
+  static Color iconNotSelected() {
+    return const Color.fromRGBO(24, 23, 37, 1);
+  }
 }
