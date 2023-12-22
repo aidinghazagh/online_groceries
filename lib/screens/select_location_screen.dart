@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_groceries/colors/colors.dart';
 import 'package:online_groceries/screens/sign_screen.dart';
-import 'package:online_groceries/text_styles/app_text_styles.dart';
+import 'package:online_groceries/style/app_text_styles.dart';
 
 const List<String> zone = <String>['Banarsee', 'Two', 'Three', 'Four'];
 const List<String> area = <String>['One', 'Two', 'Three', 'Four'];

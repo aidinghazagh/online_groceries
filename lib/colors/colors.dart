@@ -12,4 +12,12 @@ class AppColors {
   static Color iconNotSelected() {
     return const Color.fromRGBO(24, 23, 37, 1);
   }
+
+  static Color searchField() {
+    return const Color.fromRGBO(242, 243, 242, 1);
+  }
+
+  static Color cardBorder() {
+    return const Color.fromRGBO(226, 226, 226, 1);
+  }
 }

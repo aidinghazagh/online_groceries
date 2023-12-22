@@ -5,7 +5,7 @@ import 'package:online_groceries/screens/cart_screen.dart';
 import 'package:online_groceries/screens/explore_screen.dart';
 import 'package:online_groceries/screens/favorite_screen.dart';
 import 'package:online_groceries/screens/home_screen.dart';
-import 'package:online_groceries/text_styles/app_text_styles.dart';
+import 'package:online_groceries/style/app_text_styles.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key});
@@ -27,32 +27,26 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     var activePageTitle = '';
 
-    Widget activePage = const HomeScreen();
+    Widget activePage = const SafeArea(child: HomeScreen());
 
     if (_selectedPageIndex == 1) {
-      activePage = const ExploreScreen();
+      activePage = const SafeArea(child: ExploreScreen());
       activePageTitle = 'Find Products';
     }
     if (_selectedPageIndex == 2) {
-      activePage = const CartScreen();
+      activePage = const SafeArea(child: CartScreen());
       activePageTitle = 'My Cart';
     }
     if (_selectedPageIndex == 3) {
-      activePage = const FavoriteScreen();
+      activePage = const SafeArea(child: FavoriteScreen());
       activePageTitle = 'Favorite';
     }
     if (_selectedPageIndex == 4) {
-      activePage = const AccountScreen();
+      activePage = const SafeArea(child: AccountScreen());
       activePageTitle = '';
     }
 
     return Scaffold(
-      appBar: AppBar(
-          title: Text(
-            activePageTitle,
-            style: AppTextStyle.pageTitle(),
-          ),
-          centerTitle: true),
       body: activePage,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,

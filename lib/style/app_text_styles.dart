@@ -34,6 +34,26 @@ class AppTextStyle {
         'Gilroy', const Color.fromRGBO(24, 23, 37, 1), 20, FontWeight.bold);
   }
 
+  static TextStyle searchHint() {
+    return _textStyle(
+        'Gilroy', const Color.fromRGBO(124, 124, 124, 1), 14, FontWeight.bold);
+  }
+
+  static TextStyle cardTitle() {
+    return _textStyle(
+        'Gilroy', const Color.fromRGBO(24, 23, 37, 1), 16, FontWeight.bold);
+  }
+
+  static TextStyle cardPrice() {
+    return _textStyle(
+        'Gilroy', const Color.fromRGBO(24, 23, 37, 1), 18, FontWeight.bold);
+  }
+
+  static TextStyle cardQuantityPrice() {
+    return _textStyle('Gilroy', const Color.fromRGBO(124, 124, 124, 1), 14,
+        FontWeight.normal);
+  }
+
   static TextStyle _textStyle(
       String fontFamily, Color color, double size, FontWeight fontWeight) {
     return TextStyle(

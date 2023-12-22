@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_groceries/colors/colors.dart';
 import 'package:online_groceries/screens/select_location_screen.dart';
-import 'package:online_groceries/text_styles/app_text_styles.dart';
+import 'package:online_groceries/style/app_text_styles.dart';
 
 class EnterCodeScreen extends StatefulWidget {
   const EnterCodeScreen({super.key});
