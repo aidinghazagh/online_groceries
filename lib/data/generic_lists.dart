@@ -2,7 +2,7 @@ import 'package:online_groceries/models/product.dart';
 
 const exclusiveOffer = [
   Product(
-      name: 'Banana',
+      name: 'Banana Organic',
       quantityPerPrice: '7pcs',
       price: '\$4.99',
       detail:
@@ -19,7 +19,7 @@ const exclusiveOffer = [
       detail:
           'Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.',
       nutritions: '100gr',
-      review: 5,
+      review: 1,
       category: Category.fruit,
       brand: Brand.indivisual,
       image: 'apple.png'),
@@ -44,7 +44,7 @@ const bestSelling = [
       detail:
           'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
       nutritions: '100gr',
-      review: 5,
+      review: 4,
       category: Category.fastfood,
       brand: Brand.cocola,
       image: 'bell_peper.png'),
@@ -55,7 +55,7 @@ const bestSelling = [
       detail:
           'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
       nutritions: '100gr',
-      review: 5,
+      review: 3,
       category: Category.fastfood,
       brand: Brand.cocola,
       image: 'ginger.png'),
@@ -66,8 +66,44 @@ const bestSelling = [
       detail:
           'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
       nutritions: '100gr',
-      review: 5,
+      review: 2,
       category: Category.fastfood,
       brand: Brand.cocola,
       image: 'diet_coke.png'),
+];
+
+const groceries = [
+  Product(
+      name: 'Beef Bone',
+      quantityPerPrice: '1kg',
+      price: '\$4.99',
+      detail:
+          'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
+      nutritions: '100gr',
+      review: 5,
+      category: Category.groceries,
+      brand: Brand.indivisual,
+      image: 'beef_bone.png'),
+  Product(
+      name: 'Broiler Chicken',
+      quantityPerPrice: '7pcs',
+      price: '\$4.99',
+      detail:
+          'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
+      nutritions: '100gr',
+      review: 5,
+      category: Category.groceries,
+      brand: Brand.indivisual,
+      image: 'chicken.png'),
+  Product(
+      name: 'Banana Organic',
+      quantityPerPrice: '7pcs',
+      price: '\$4.99',
+      detail:
+          'Bananas are nutritious. Bananas may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.',
+      nutritions: '100gr',
+      review: 4,
+      category: Category.fruit,
+      brand: Brand.indivisual,
+      image: 'banana.png'),
 ];

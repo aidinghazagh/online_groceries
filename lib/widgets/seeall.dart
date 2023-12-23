@@ -8,7 +8,7 @@ class SeeAll extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 5, top: 30, right: 5),
+      padding: const EdgeInsets.only(left: 5, top: 30, right: 5, bottom: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

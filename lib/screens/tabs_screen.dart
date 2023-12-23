@@ -52,42 +52,60 @@ class _TabsScreenState extends State<TabsScreen> {
         onTap: _selectPage,
         currentIndex: _selectedPageIndex,
         selectedItemColor: AppColors.primary(),
-        unselectedLabelStyle: AppTextStyle.subtitle(),
-        selectedLabelStyle: AppTextStyle.subtitle(),
+        unselectedItemColor: Colors.black,
+        unselectedLabelStyle:
+            AppTextStyle.subtitle().copyWith(fontWeight: FontWeight.normal),
+        selectedLabelStyle:
+            AppTextStyle.subtitle().copyWith(fontWeight: FontWeight.normal),
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            icon: Image.asset(
-              'assets/images/Home.png',
-              color: _selectedPageIndex == 0 ? AppColors.primary() : null,
+            icon: Container(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Image.asset(
+                'assets/images/Home.png',
+                color: _selectedPageIndex == 0 ? AppColors.primary() : null,
+              ),
             ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(
-              'assets/images/explore.png',
-              color: _selectedPageIndex == 1 ? AppColors.primary() : null,
+            icon: Container(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Image.asset(
+                'assets/images/explore.png',
+                color: _selectedPageIndex == 1 ? AppColors.primary() : null,
+              ),
             ),
             label: 'Explore',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(
-              'assets/images/cart.png',
-              color: _selectedPageIndex == 2 ? AppColors.primary() : null,
+            icon: Container(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Image.asset(
+                'assets/images/cart.png',
+                color: _selectedPageIndex == 2 ? AppColors.primary() : null,
+              ),
             ),
             label: 'Cart',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(
-              'assets/images/favorite.png',
-              color: _selectedPageIndex == 3 ? AppColors.primary() : null,
+            icon: Container(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Image.asset(
+                'assets/images/favorite.png',
+                color: _selectedPageIndex == 3 ? AppColors.primary() : null,
+              ),
             ),
             label: 'Favorite',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(
-              'assets/images/account.png',
-              color: _selectedPageIndex == 4 ? AppColors.primary() : null,
+            icon: Container(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Image.asset(
+                'assets/images/account.png',
+                color: _selectedPageIndex == 4 ? AppColors.primary() : null,
+              ),
             ),
             label: 'Account',
           ),

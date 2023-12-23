@@ -4,6 +4,7 @@ enum Category {
   chips,
   fastfood,
   fruit,
+  groceries,
 }
 
 enum Brand {

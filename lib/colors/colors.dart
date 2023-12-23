@@ -20,4 +20,12 @@ class AppColors {
   static Color cardBorder() {
     return const Color.fromRGBO(226, 226, 226, 1);
   }
+
+  static Color pulses() {
+    return const Color.fromRGBO(248, 164, 76, 1).withOpacity(0.15);
+  }
+
+  static Color rice() {
+    return primary().withOpacity(0.15);
+  }
 }

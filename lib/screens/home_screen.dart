@@ -2,8 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:online_groceries/colors/colors.dart';
 import 'package:online_groceries/data/generic_lists.dart';
+import 'package:online_groceries/data/groceries_categories.dart';
 import 'package:online_groceries/style/app_text_styles.dart';
 import 'package:online_groceries/widgets/exclusive_offer.dart';
+import 'package:online_groceries/widgets/groceries_category.dart';
 import 'package:online_groceries/widgets/home_location.dart';
 import 'package:online_groceries/widgets/seeall.dart';
 
@@ -150,7 +152,31 @@ class _HomeScreenState extends State<HomeScreen> {
                   listName: exclusiveOffer,
                 ),
                 const SeeAll(title: 'Best Selling'),
-                const HorizantalBuilder(listName: bestSelling)
+                const HorizantalBuilder(listName: bestSelling),
+                const SeeAll(title: 'Groceries'),
+                SizedBox(
+                  width: double.infinity,
+                  height: 110,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: groceriesCategories.length,
+                      itemBuilder: (context, index) {
+                        return Row(
+                          children: [
+                            GroceriesCategory(
+                                image: groceriesCategories[index].image,
+                                title: groceriesCategories[index].title,
+                                color: groceriesCategories[index].color),
+                            if (index != groceriesCategories.length - 1)
+                              const SizedBox(
+                                width: 15,
+                              ),
+                          ],
+                        );
+                      }),
+                ),
+                const SizedBox(height: 20),
+                const HorizantalBuilder(listName: groceries),
               ],
             ),
           ),
