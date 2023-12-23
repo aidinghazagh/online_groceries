@@ -38,6 +38,7 @@ class _ProductDetailState extends State<ProductDetail> {
               children: [
                 Stack(
                   children: [
+                    // Shadow Container
                     Container(
                       width: 414,
                       height: 372,
@@ -58,11 +59,13 @@ class _ProductDetailState extends State<ProductDetail> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 100),
+                      padding: const EdgeInsets.only(
+                        top: 10,
+                      ),
                       child: CarouselSlider(
                         carouselController: _controller,
                         options: CarouselOptions(
-                            height: 271.5,
+                            height: 330,
                             autoPlay: true,
                             autoPlayCurve: Curves.fastOutSlowIn,
                             enableInfiniteScroll: true,
@@ -88,7 +91,7 @@ class _ProductDetailState extends State<ProductDetail> {
                                       Positioned(
                                         left: 0,
                                         right: 0,
-                                        bottom: 20,
+                                        top: 120,
                                         child: Container(
                                           width: 295,
                                           height: 171,
@@ -111,7 +114,10 @@ class _ProductDetailState extends State<ProductDetail> {
                                           ),
                                         ),
                                       ),
-                                      Center(
+                                      Positioned(
+                                        left: 0,
+                                        right: 0,
+                                        top: 78,
                                         child: Image.asset(
                                           'assets/images/${widget.product.image}',
                                           fit: BoxFit.contain,
@@ -198,6 +204,7 @@ class _ProductDetailState extends State<ProductDetail> {
                           ),
                         ],
                       ),
+                      const SizedBox(height: 30),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
