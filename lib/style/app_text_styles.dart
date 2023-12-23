@@ -54,6 +54,11 @@ class AppTextStyle {
         FontWeight.normal);
   }
 
+  static TextStyle detailSectionTitle() {
+    return _textStyle(
+        'Gilroy', const Color.fromRGBO(24, 23, 37, 1), 16, FontWeight.bold);
+  }
+
   static TextStyle _textStyle(
       String fontFamily, Color color, double size, FontWeight fontWeight) {
     return TextStyle(

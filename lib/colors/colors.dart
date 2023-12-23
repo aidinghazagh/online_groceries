@@ -28,4 +28,24 @@ class AppColors {
   static Color rice() {
     return primary().withOpacity(0.15);
   }
+
+  static productDetailImageContainer() {
+    return const Color.fromRGBO(242, 243, 242, 1);
+  }
+
+  static remove() {
+    return const Color.fromRGBO(179, 179, 179, 1);
+  }
+
+  static detailBorder() {
+    return const Color.fromRGBO(229, 229, 229, 1);
+  }
+
+  static detailNuiritionContainer() {
+    return const Color.fromRGBO(235, 235, 235, 1);
+  }
+
+  static detailStar() {
+    return const Color.fromRGBO(243, 96, 63, 1);
+  }
 }
