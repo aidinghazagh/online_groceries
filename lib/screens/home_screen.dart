@@ -16,7 +16,8 @@ final List<String> imgList = [
 ];
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, required this.goToExplore});
+  final Function goToExplore;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -59,6 +60,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 43),
                         child: TextField(
+                          onTap: () {
+                            FocusManager.instance.primaryFocus?.unfocus();
+                            widget.goToExplore();
+                          },
                           style:
                               AppTextStyle.titleLarge().copyWith(fontSize: 16),
                           decoration: InputDecoration(
@@ -177,6 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(height: 20),
                 const HorizantalBuilder(listName: groceries),
+                const SizedBox(height: 27),
               ],
             ),
           ),

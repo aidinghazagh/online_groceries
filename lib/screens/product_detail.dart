@@ -384,7 +384,7 @@ class _ProductDetailState extends State<ProductDetail> {
                                   ),
                                   IconButton(
                                       onPressed: () {},
-                                      icon: Icon(Icons.arrow_forward_ios))
+                                      icon: const Icon(Icons.arrow_forward_ios))
                                 ],
                               ),
                             ),

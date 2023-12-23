@@ -16,6 +16,7 @@ class TabsScreen extends StatefulWidget {
 
 class _TabsScreenState extends State<TabsScreen> {
   int _selectedPageIndex = 0;
+  bool autofocus = false;
 
   void _selectPage(int index) {
     setState(() {
@@ -23,14 +24,26 @@ class _TabsScreenState extends State<TabsScreen> {
     });
   }
 
+  void goToExplore() {
+    autofocus = true;
+    setState((() => _selectedPageIndex = 1));
+  }
+
   @override
   Widget build(BuildContext context) {
     var activePageTitle = '';
 
-    Widget activePage = const SafeArea(child: HomeScreen());
+    Widget activePage = SafeArea(child: HomeScreen(
+      goToExplore: () {
+        goToExplore();
+      },
+    ));
 
     if (_selectedPageIndex == 1) {
-      activePage = const SafeArea(child: ExploreScreen());
+      activePage = SafeArea(
+          child: ExploreScreen(
+        autofocus: autofocus,
+      ));
       activePageTitle = 'Find Products';
     }
     if (_selectedPageIndex == 2) {
@@ -45,6 +58,8 @@ class _TabsScreenState extends State<TabsScreen> {
       activePage = const SafeArea(child: AccountScreen());
       activePageTitle = '';
     }
+
+    autofocus = false;
 
     return Scaffold(
       body: activePage,
