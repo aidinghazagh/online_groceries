@@ -31,7 +31,7 @@ const exclusiveOffer = [
           'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
       nutritions: '100gr',
       review: 5,
-      category: Category.fastfood,
+      category: Category.bevreges,
       brand: Brand.cocola,
       image: 'diet_coke.png'),
 ];
@@ -45,7 +45,7 @@ const bestSelling = [
           'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
       nutritions: '100gr',
       review: 4,
-      category: Category.fastfood,
+      category: Category.bevreges,
       brand: Brand.cocola,
       image: 'bell_peper.png'),
   Product(
@@ -56,7 +56,7 @@ const bestSelling = [
           'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
       nutritions: '100gr',
       review: 3,
-      category: Category.fastfood,
+      category: Category.bevreges,
       brand: Brand.cocola,
       image: 'ginger.png'),
   Product(
@@ -67,7 +67,7 @@ const bestSelling = [
           'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
       nutritions: '100gr',
       review: 2,
-      category: Category.fastfood,
+      category: Category.bevreges,
       brand: Brand.cocola,
       image: 'diet_coke.png'),
 ];

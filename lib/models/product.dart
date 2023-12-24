@@ -1,10 +1,11 @@
 enum Category {
-  eggs,
-  noodles,
-  chips,
-  fastfood,
+  dairyAndEggs,
+  oil,
+  meat,
+  bakeryAndSnacks,
   fruit,
   groceries,
+  bevreges
 }
 
 enum Brand {

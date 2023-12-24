@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:online_groceries/colors/colors.dart';
+import 'package:online_groceries/data/cart_items.dart';
+import 'package:online_groceries/models/cart_item.dart';
 import 'package:online_groceries/models/product.dart';
 import 'package:online_groceries/screens/product_detail.dart';
 import 'package:online_groceries/style/app_text_styles.dart';
 
-class HorizantalBuilder extends StatelessWidget {
+class HorizantalBuilder extends StatefulWidget {
   const HorizantalBuilder({super.key, required this.listName});
 
   final List<Product> listName;
 
+  @override
+  State<HorizantalBuilder> createState() => _HorizantalBuilderState();
+}
+
+class _HorizantalBuilderState extends State<HorizantalBuilder> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,7 +23,7 @@ class HorizantalBuilder extends StatelessWidget {
       height: 250,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: listName.length,
+        itemCount: widget.listName.length,
         itemBuilder: (context, index) {
           return Row(
             children: [
@@ -24,7 +31,7 @@ class HorizantalBuilder extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) =>
-                          ProductDetail(product: listName[index])));
+                          ProductDetail(product: widget.listName[index])));
                 },
                 child: Stack(
                   children: [
@@ -42,24 +49,24 @@ class HorizantalBuilder extends StatelessWidget {
                               height: 33,
                             ),
                             Image.asset(
-                              'assets/images/${listName[index].image}',
+                              'assets/images/${widget.listName[index].image}',
                               width: 103,
                               height: 62,
                               fit: BoxFit.contain,
                             ),
                             const SizedBox(height: 33),
                             Text(
-                              listName[index].name,
+                              widget.listName[index].name,
                               style: AppTextStyle.cardTitle(),
                             ),
                             const SizedBox(height: 2),
                             Text(
-                              '${listName[index].quantityPerPrice}, Price',
+                              '${widget.listName[index].quantityPerPrice}, Price',
                               style: AppTextStyle.cardQuantityPrice(),
                             ),
                             const Spacer(),
                             Text(
-                              '\$${listName[index].price}',
+                              '\$${widget.listName[index].price}',
                               style: AppTextStyle.cardPrice(),
                             ),
                             const SizedBox(height: 25),
@@ -71,13 +78,20 @@ class HorizantalBuilder extends StatelessWidget {
                       bottom: 5,
                       right: 5,
                       child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              cartItems.add(CartItem(
+                                product: widget.listName[index],
+                                amonut: 1,
+                              ));
+                            });
+                          },
                           icon: Image.asset('assets/images/add-ic.png')),
                     ),
                   ],
                 ),
               ),
-              if (index != listName.length - 1)
+              if (index != widget.listName.length - 1)
                 const SizedBox(
                   width: 13,
                 )

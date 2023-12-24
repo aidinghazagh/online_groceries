@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:online_groceries/colors/colors.dart';
+import 'package:online_groceries/data/cart_items.dart';
+import 'package:online_groceries/models/cart_item.dart';
 import 'package:online_groceries/models/product.dart';
 import 'package:online_groceries/style/app_text_styles.dart';
 
@@ -400,6 +402,7 @@ class _ProductDetailState extends State<ProductDetail> {
                           ],
                         ),
                       ),
+                      const SizedBox(height: 10),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
@@ -408,7 +411,15 @@ class _ProductDetailState extends State<ProductDetail> {
                           fixedSize: const Size(364, 67),
                           backgroundColor: AppColors.primary(),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            cartItems.add(CartItem(
+                              product: widget.product,
+                              amonut: amount,
+                            ));
+                            Navigator.of(context).pop();
+                          });
+                        },
                         child: Text(
                           'Add to Basket',
                           style: AppTextStyle.welcomeLarge().copyWith(

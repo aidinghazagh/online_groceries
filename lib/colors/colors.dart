@@ -48,4 +48,8 @@ class AppColors {
   static detailStar() {
     return const Color.fromRGBO(243, 96, 63, 1);
   }
+
+  static checkOutSubTitle() {
+    return const Color.fromRGBO(124, 124, 124, 1);
+  }
 }

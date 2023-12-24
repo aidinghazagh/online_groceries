@@ -24,19 +24,20 @@ class _TabsScreenState extends State<TabsScreen> {
     });
   }
 
-  void goToExplore() {
+  void goToExploreFocus() {
     autofocus = true;
+    setState((() => _selectedPageIndex = 1));
+  }
+
+  void goToExplore() {
     setState((() => _selectedPageIndex = 1));
   }
 
   @override
   Widget build(BuildContext context) {
-    var activePageTitle = '';
-
-    Widget activePage = SafeArea(child: HomeScreen(
-      goToExplore: () {
-        goToExplore();
-      },
+    Widget activePage = SafeArea(
+        child: HomeScreen(
+      goToExplore: () => goToExploreFocus(),
     ));
 
     if (_selectedPageIndex == 1) {
@@ -44,19 +45,18 @@ class _TabsScreenState extends State<TabsScreen> {
           child: ExploreScreen(
         autofocus: autofocus,
       ));
-      activePageTitle = 'Find Products';
     }
     if (_selectedPageIndex == 2) {
-      activePage = const SafeArea(child: CartScreen());
-      activePageTitle = 'My Cart';
+      activePage = SafeArea(
+          child: CartScreen(
+        goToExplore: () => goToExplore(),
+      ));
     }
     if (_selectedPageIndex == 3) {
       activePage = const SafeArea(child: FavoriteScreen());
-      activePageTitle = 'Favorite';
     }
     if (_selectedPageIndex == 4) {
       activePage = const SafeArea(child: AccountScreen());
-      activePageTitle = '';
     }
 
     autofocus = false;
