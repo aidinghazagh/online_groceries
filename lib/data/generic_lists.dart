@@ -4,7 +4,7 @@ const exclusiveOffer = [
   Product(
       name: 'Banana Organic',
       quantityPerPrice: '7pcs',
-      price: '\$4.99',
+      price: 4.99,
       detail:
           'Bananas are nutritious. Bananas may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.',
       nutritions: '100gr',
@@ -15,7 +15,7 @@ const exclusiveOffer = [
   Product(
       name: 'Red Apple',
       quantityPerPrice: '1kg',
-      price: '\$4.99',
+      price: 4.99,
       detail:
           'Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.',
       nutritions: '100gr',
@@ -26,7 +26,7 @@ const exclusiveOffer = [
   Product(
       name: 'Diet Coke',
       quantityPerPrice: '335ml',
-      price: '\$4.99',
+      price: 4.99,
       detail:
           'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
       nutritions: '100gr',
@@ -40,7 +40,7 @@ const bestSelling = [
   Product(
       name: 'Bell Pepper Red',
       quantityPerPrice: '1kg',
-      price: '\$4.99',
+      price: 4.99,
       detail:
           'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
       nutritions: '100gr',
@@ -51,7 +51,7 @@ const bestSelling = [
   Product(
       name: 'Ginger',
       quantityPerPrice: '250gm',
-      price: '\$4.99',
+      price: 4.99,
       detail:
           'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
       nutritions: '100gr',
@@ -62,7 +62,7 @@ const bestSelling = [
   Product(
       name: 'Diet Coke',
       quantityPerPrice: '335ml',
-      price: '\$4.99',
+      price: 4.99,
       detail:
           'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
       nutritions: '100gr',
@@ -76,7 +76,7 @@ const groceries = [
   Product(
       name: 'Beef Bone',
       quantityPerPrice: '1kg',
-      price: '\$4.99',
+      price: 4.99,
       detail:
           'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
       nutritions: '100gr',
@@ -87,7 +87,7 @@ const groceries = [
   Product(
       name: 'Broiler Chicken',
       quantityPerPrice: '7pcs',
-      price: '\$4.99',
+      price: 4.99,
       detail:
           'Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
       nutritions: '100gr',
@@ -98,7 +98,7 @@ const groceries = [
   Product(
       name: 'Banana Organic',
       quantityPerPrice: '7pcs',
-      price: '\$4.99',
+      price: 4.99,
       detail:
           'Bananas are nutritious. Bananas may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.',
       nutritions: '100gr',

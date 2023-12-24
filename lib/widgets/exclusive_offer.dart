@@ -59,7 +59,7 @@ class HorizantalBuilder extends StatelessWidget {
                             ),
                             const Spacer(),
                             Text(
-                              listName[index].price,
+                              '\$${listName[index].price}',
                               style: AppTextStyle.cardPrice(),
                             ),
                             const SizedBox(height: 25),

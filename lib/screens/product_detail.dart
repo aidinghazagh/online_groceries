@@ -29,6 +29,8 @@ class _ProductDetailState extends State<ProductDetail> {
   final CarouselController _controller = CarouselController();
   @override
   Widget build(BuildContext context) {
+    double totalPrice = amount * widget.product.price;
+    String totalPriceString = totalPrice.toStringAsFixed(2);
     return Scaffold(
       body: Stack(
         children: [
@@ -256,7 +258,7 @@ class _ProductDetailState extends State<ProductDetail> {
                             ),
                           ),
                           Text(
-                            widget.product.price,
+                            '\$$totalPriceString',
                             style: AppTextStyle.titleLarge()
                                 .copyWith(fontSize: 24),
                           ),

@@ -17,7 +17,7 @@ enum Brand {
 class Product {
   final String name;
   final String quantityPerPrice;
-  final String price;
+  final double price;
   final String detail;
   final String nutritions;
   final int review;
