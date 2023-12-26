@@ -56,4 +56,8 @@ class AppColors {
   static seconday() {
     return const Color.fromRGBO(72, 158, 103, 1);
   }
+
+  static addedCart() {
+    return const Color.fromRGBO(111, 174, 121, 1);
+  }
 }

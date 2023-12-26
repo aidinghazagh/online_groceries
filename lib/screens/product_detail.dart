@@ -9,8 +9,14 @@ import 'package:online_groceries/models/product.dart';
 import 'package:online_groceries/style/app_text_styles.dart';
 
 class ProductDetail extends StatefulWidget {
-  const ProductDetail({super.key, required this.product});
+  const ProductDetail(
+      {super.key,
+      required this.product,
+      required this.goToCart,
+      required this.itemAdded});
   final Product product;
+  final Function goToCart;
+  final Function itemAdded;
 
   @override
   State<ProductDetail> createState() => _ProductDetailState();
@@ -419,6 +425,7 @@ class _ProductDetailState extends State<ProductDetail> {
                             ));
                             Navigator.of(context).pop();
                           });
+                          widget.itemAdded();
                         },
                         child: Text(
                           'Add to Basket',

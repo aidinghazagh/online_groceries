@@ -7,8 +7,13 @@ import 'package:online_groceries/screens/product_detail.dart';
 import 'package:online_groceries/style/app_text_styles.dart';
 
 class HorizantalBuilder extends StatefulWidget {
-  const HorizantalBuilder({super.key, required this.listName});
-
+  const HorizantalBuilder(
+      {super.key,
+      required this.listName,
+      required this.goToCart,
+      required this.itemAdded});
+  final Function goToCart;
+  final Function itemAdded;
   final List<Product> listName;
 
   @override
@@ -30,8 +35,11 @@ class _HorizantalBuilderState extends State<HorizantalBuilder> {
               InkWell(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) =>
-                          ProductDetail(product: widget.listName[index])));
+                      builder: (context) => ProductDetail(
+                            itemAdded: widget.itemAdded,
+                            product: widget.listName[index],
+                            goToCart: widget.goToCart,
+                          )));
                 },
                 child: Stack(
                   children: [
@@ -79,6 +87,8 @@ class _HorizantalBuilderState extends State<HorizantalBuilder> {
                       right: 5,
                       child: IconButton(
                           onPressed: () {
+                            widget.itemAdded();
+
                             setState(() {
                               cartItems.add(CartItem(
                                 product: widget.listName[index],

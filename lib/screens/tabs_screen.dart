@@ -29,12 +29,12 @@ class _TabsScreenState extends State<TabsScreen> {
     setState((() => _selectedPageIndex = 1));
   }
 
-  void goToHome() {
-    setState((() => _selectedPageIndex = 0));
+  void goTo(int page) {
+    setState((() => _selectedPageIndex = page));
   }
 
-  void goToExplore() {
-    setState((() => _selectedPageIndex = 1));
+  void goToExplore(int page) {
+    setState((() => _selectedPageIndex = page));
   }
 
   @override
@@ -42,6 +42,7 @@ class _TabsScreenState extends State<TabsScreen> {
     Widget activePage = SafeArea(
         child: HomeScreen(
       goToExplore: () => goToExploreFocus(),
+      goToCart: () => goTo(2),
     ));
 
     if (_selectedPageIndex == 1) {
@@ -53,8 +54,8 @@ class _TabsScreenState extends State<TabsScreen> {
     if (_selectedPageIndex == 2) {
       activePage = SafeArea(
           child: CartScreen(
-        goToHome: () => goToHome(),
-        goToExplore: () => goToExplore(),
+        goToHome: () => goTo(0),
+        goToExplore: () => goToExplore(1),
       ));
     }
     if (_selectedPageIndex == 3) {
