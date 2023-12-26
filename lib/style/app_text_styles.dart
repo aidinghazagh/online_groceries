@@ -59,6 +59,11 @@ class AppTextStyle {
         'Gilroy', const Color.fromRGBO(24, 23, 37, 1), 16, FontWeight.bold);
   }
 
+  static TextStyle checkOutButtonPrice() {
+    return _textStyle('Gilroy', const Color.fromRGBO(252, 252, 252, 1), 12,
+        FontWeight.normal);
+  }
+
   static TextStyle _textStyle(
       String fontFamily, Color color, double size, FontWeight fontWeight) {
     return TextStyle(

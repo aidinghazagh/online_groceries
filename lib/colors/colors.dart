@@ -52,4 +52,8 @@ class AppColors {
   static checkOutSubTitle() {
     return const Color.fromRGBO(124, 124, 124, 1);
   }
+
+  static seconday() {
+    return const Color.fromRGBO(72, 158, 103, 1);
+  }
 }

@@ -676,6 +676,21 @@ class _CartScreenState extends State<CartScreen> {
                         ),
                       ),
                     ),
+                    Positioned(
+                      right: 30,
+                      top: 20,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 4, horizontal: 5),
+                        decoration: BoxDecoration(
+                            color: AppColors.seconday(),
+                            borderRadius: BorderRadius.circular(4)),
+                        child: Text(
+                          '\$${totalAmount.toStringAsFixed(2)}',
+                          style: AppTextStyle.checkOutButtonPrice(),
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ],
