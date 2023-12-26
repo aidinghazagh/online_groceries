@@ -84,6 +84,12 @@ class _CartScreenState extends State<CartScreen> {
                       height: 157,
                       padding:
                           const EdgeInsets.only(left: 30, right: 30, top: 25),
+                      decoration: index == duplicates.length - 1
+                          ? BoxDecoration(
+                              border: Border(
+                                  bottom: BorderSide(
+                                      color: AppColors.cardBorder())))
+                          : null,
                       child: Container(
                         padding: const EdgeInsets.only(bottom: 25),
                         decoration: BoxDecoration(
