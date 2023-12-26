@@ -8,11 +8,7 @@ import 'package:online_groceries/style/app_text_styles.dart';
 
 class HorizantalBuilder extends StatefulWidget {
   const HorizantalBuilder(
-      {super.key,
-      required this.listName,
-      required this.goToCart,
-      required this.itemAdded});
-  final Function goToCart;
+      {super.key, required this.listName, required this.itemAdded});
   final Function itemAdded;
   final List<Product> listName;
 
@@ -38,7 +34,6 @@ class _HorizantalBuilderState extends State<HorizantalBuilder> {
                       builder: (context) => ProductDetail(
                             itemAdded: widget.itemAdded,
                             product: widget.listName[index],
-                            goToCart: widget.goToCart,
                           )));
                 },
                 child: Stack(

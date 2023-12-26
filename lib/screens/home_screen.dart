@@ -243,7 +243,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   const SeeAll(title: 'Exclusive Offer'),
                   HorizantalBuilder(
-                    goToCart: widget.goToCart,
                     listName: exclusiveOffer,
                     itemAdded: () {
                       itemAdded();
@@ -254,7 +253,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemAdded: () {
                         itemAdded();
                       },
-                      goToCart: widget.goToCart,
                       listName: bestSelling),
                   const SeeAll(title: 'Groceries'),
                   SizedBox(
@@ -283,7 +281,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemAdded: () {
                         itemAdded();
                       },
-                      goToCart: widget.goToCart,
                       listName: groceries),
                   const SizedBox(height: 27),
                 ],

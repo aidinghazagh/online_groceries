@@ -10,12 +10,8 @@ import 'package:online_groceries/style/app_text_styles.dart';
 
 class ProductDetail extends StatefulWidget {
   const ProductDetail(
-      {super.key,
-      required this.product,
-      required this.goToCart,
-      required this.itemAdded});
+      {super.key, required this.product, required this.itemAdded});
   final Product product;
-  final Function goToCart;
   final Function itemAdded;
 
   @override

@@ -48,6 +48,7 @@ class _TabsScreenState extends State<TabsScreen> {
     if (_selectedPageIndex == 1) {
       activePage = SafeArea(
           child: ExploreScreen(
+        goToCart: () => goTo(2),
         autofocus: autofocus,
       ));
     }
