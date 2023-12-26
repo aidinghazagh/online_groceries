@@ -5,15 +5,17 @@ import 'package:online_groceries/screens/order_accpet_screen.dart';
 import 'package:online_groceries/style/app_text_styles.dart';
 
 class CartScreen extends StatefulWidget {
-  const CartScreen({super.key, required this.goToExplore});
+  const CartScreen(
+      {super.key, required this.goToExplore, required this.goToHome});
   final Function goToExplore;
+  final Function goToHome;
 
   @override
   State<CartScreen> createState() => _CartScreenState();
 }
 
 class _CartScreenState extends State<CartScreen> {
-  bool orderAccepted = true;
+  bool orderAccepted = false;
 
   final List toRemove = [];
   @override
@@ -78,14 +80,16 @@ class _CartScreenState extends State<CartScreen> {
                 return Column(
                   children: [
                     Container(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 30, horizontal: 25),
-                      decoration: BoxDecoration(
-                          border: Border(
-                              top: BorderSide(color: AppColors.cardBorder()))),
-                      child: SizedBox(
-                        width: 364,
-                        height: 105,
+                      width: 413,
+                      height: 157,
+                      padding:
+                          const EdgeInsets.only(left: 30, right: 30, top: 25),
+                      child: Container(
+                        padding: const EdgeInsets.only(bottom: 25),
+                        decoration: BoxDecoration(
+                            border: Border(
+                                bottom:
+                                    BorderSide(color: AppColors.cardBorder()))),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -111,9 +115,7 @@ class _CartScreenState extends State<CartScreen> {
                                           style: AppTextStyle.cardTitle(),
                                         ),
                                         Text(
-                                          duplicates[index]
-                                              .product
-                                              .quantityPerPrice,
+                                          '${duplicates[index].product.quantityPerPrice}, Price',
                                           style:
                                               AppTextStyle.cardQuantityPrice(),
                                         ),
@@ -525,10 +527,126 @@ class _CartScreenState extends State<CartScreen> {
                                                   ),
                                                   onPressed: () {
                                                     if (orderAccepted) {
+                                                      Navigator.of(context)
+                                                          .pop();
                                                       Navigator.of(context).push(
                                                           MaterialPageRoute(
                                                               builder: (context) =>
-                                                                  OrderAcceptScreen()));
+                                                                  OrderAcceptScreen(
+                                                                    goToHome: () =>
+                                                                        widget
+                                                                            .goToHome(),
+                                                                  )));
+                                                      duplicates.removeRange(
+                                                          0, duplicates.length);
+                                                    } else {
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                      showDialog(
+                                                          context: context,
+                                                          barrierDismissible:
+                                                              false,
+                                                          builder: (context) =>
+                                                              AlertDialog(
+                                                                surfaceTintColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                backgroundColor:
+                                                                    Colors
+                                                                        .white,
+                                                                insetPadding:
+                                                                    const EdgeInsets
+                                                                        .all(
+                                                                        20),
+                                                                shape:
+                                                                    RoundedRectangleBorder(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              18),
+                                                                ),
+                                                                content: Stack(
+                                                                  alignment:
+                                                                      Alignment
+                                                                          .center,
+                                                                  children: [
+                                                                    SizedBox(
+                                                                      width:
+                                                                          364,
+                                                                      height:
+                                                                          601,
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.spaceBetween,
+                                                                        children: [
+                                                                          Column(
+                                                                            children: [
+                                                                              const SizedBox(height: 49),
+                                                                              Image.asset('assets/images/fail.png'),
+                                                                              const SizedBox(height: 49),
+                                                                              Text(
+                                                                                'Oops! Order Failed',
+                                                                                style: AppTextStyle.titleLarge(),
+                                                                                textAlign: TextAlign.center,
+                                                                              ),
+                                                                              const SizedBox(height: 20),
+                                                                              Text(
+                                                                                'Something went tembly wrong.',
+                                                                                style: AppTextStyle.searchHint(),
+                                                                                textAlign: TextAlign.center,
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                          Column(
+                                                                            children: [
+                                                                              ElevatedButton(
+                                                                                style: ElevatedButton.styleFrom(
+                                                                                  shape: RoundedRectangleBorder(
+                                                                                    borderRadius: BorderRadius.circular(19),
+                                                                                  ),
+                                                                                  fixedSize: const Size(313, 67),
+                                                                                  backgroundColor: AppColors.primary(),
+                                                                                ),
+                                                                                onPressed: () {},
+                                                                                child: Text(
+                                                                                  'Please Try Again',
+                                                                                  style: AppTextStyle.welcomeLarge().copyWith(
+                                                                                    fontSize: 18,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              TextButton(
+                                                                                  style: TextButton.styleFrom(fixedSize: const Size(313, 67)),
+                                                                                  onPressed: () {
+                                                                                    Navigator.of(context).pop();
+                                                                                    widget.goToHome();
+                                                                                  },
+                                                                                  child: Text(
+                                                                                    'Back to home',
+                                                                                    style: AppTextStyle.cardTitle(),
+                                                                                  ))
+                                                                            ],
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                    Positioned(
+                                                                      left: -10,
+                                                                      top: -3,
+                                                                      child: IconButton(
+                                                                          onPressed: () {
+                                                                            Navigator.of(context).pop();
+                                                                          },
+                                                                          icon: const Icon(
+                                                                            Icons.close,
+                                                                            size:
+                                                                                32,
+                                                                          )),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ));
                                                     }
                                                   },
                                                   child: Text(
@@ -569,10 +687,16 @@ class _CartScreenState extends State<CartScreen> {
 
     return Scaffold(
         appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            'My Cart',
-            style: AppTextStyle.pageTitle(),
+          flexibleSpace: Container(
+            padding: const EdgeInsets.only(bottom: 32),
+            decoration: BoxDecoration(
+                border:
+                    Border(bottom: BorderSide(color: AppColors.cardBorder()))),
+            child: Text(
+              'My Cart',
+              style: AppTextStyle.pageTitle(),
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
         body: content);

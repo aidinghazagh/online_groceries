@@ -29,6 +29,10 @@ class _TabsScreenState extends State<TabsScreen> {
     setState((() => _selectedPageIndex = 1));
   }
 
+  void goToHome() {
+    setState((() => _selectedPageIndex = 0));
+  }
+
   void goToExplore() {
     setState((() => _selectedPageIndex = 1));
   }
@@ -49,6 +53,7 @@ class _TabsScreenState extends State<TabsScreen> {
     if (_selectedPageIndex == 2) {
       activePage = SafeArea(
           child: CartScreen(
+        goToHome: () => goToHome(),
         goToExplore: () => goToExplore(),
       ));
     }
