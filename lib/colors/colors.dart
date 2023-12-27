@@ -60,4 +60,8 @@ class AppColors {
   static addedCart() {
     return const Color.fromRGBO(111, 174, 121, 1);
   }
+
+  static filterContainer() {
+    return const Color.fromARGB(255, 231, 231, 231);
+  }
 }
