@@ -141,7 +141,11 @@ class _TabsScreenState extends State<TabsScreen> {
       ));
     }
     if (_selectedPageIndex == 3) {
-      activePage = const SafeArea(child: FavoriteScreen());
+      activePage = SafeArea(
+          child: FavoriteScreen(
+        itemAdded: itemAdded,
+        goToExplore: () => goTo(2),
+      ));
     }
     if (_selectedPageIndex == 4) {
       activePage = const SafeArea(child: AccountScreen());

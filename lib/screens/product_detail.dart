@@ -25,7 +25,6 @@ class _ProductDetailState extends State<ProductDetail> {
     'assets/images/${widget.product.image}',
   ];
 
-  bool hearted = false;
   bool detailShow = true;
 
   int _current = 0;
@@ -184,10 +183,11 @@ class _ProductDetailState extends State<ProductDetail> {
                             child: IconButton(
                               onPressed: () {
                                 setState(() {
-                                  hearted = !hearted;
+                                  widget.product.isFavorite =
+                                      !widget.product.isFavorite;
                                 });
                               },
-                              icon: hearted
+                              icon: widget.product.isFavorite
                                   ? Image.asset(
                                       'assets/images/heart-filled.png',
                                       width: 24,

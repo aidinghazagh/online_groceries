@@ -28,6 +28,7 @@ class Product {
   final bool isExclusive;
   final bool isBestselling;
   int buyingAmount;
+  bool isFavorite;
 
   Product({
     required this.name,
@@ -42,5 +43,6 @@ class Product {
     required this.isBestselling,
     required this.isExclusive,
     this.buyingAmount = 1,
+    this.isFavorite = false,
   });
 }
