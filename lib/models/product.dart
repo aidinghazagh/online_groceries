@@ -25,15 +25,22 @@ class Product {
   final Category category;
   final Brand brand;
   final String image;
+  final bool isExclusive;
+  final bool isBestselling;
+  int buyingAmount;
 
-  const Product(
-      {required this.name,
-      required this.quantityPerPrice,
-      required this.price,
-      required this.detail,
-      required this.nutritions,
-      required this.review,
-      required this.category,
-      required this.brand,
-      required this.image});
+  Product({
+    required this.name,
+    required this.quantityPerPrice,
+    required this.price,
+    required this.detail,
+    required this.nutritions,
+    required this.review,
+    required this.category,
+    required this.brand,
+    required this.image,
+    required this.isBestselling,
+    required this.isExclusive,
+    this.buyingAmount = 1,
+  });
 }

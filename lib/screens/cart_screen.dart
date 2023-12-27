@@ -15,7 +15,7 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-  bool orderAccepted = false;
+  bool orderAccepted = true;
 
   final List toRemove = [];
   @override
@@ -614,7 +614,9 @@ class _CartScreenState extends State<CartScreen> {
                                                                                   fixedSize: const Size(313, 67),
                                                                                   backgroundColor: AppColors.primary(),
                                                                                 ),
-                                                                                onPressed: () {},
+                                                                                onPressed: () {
+                                                                                  Navigator.of(context).pop();
+                                                                                },
                                                                                 child: Text(
                                                                                   'Please Try Again',
                                                                                   style: AppTextStyle.welcomeLarge().copyWith(

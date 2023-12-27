@@ -21,7 +21,13 @@ class OrderAcceptScreen extends StatelessWidget {
           children: [
             Column(
               children: [
-                Image.asset('assets/images/accpeted-tick.png'),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset('assets/images/accpeted-tick.png'),
+                    const SizedBox(width: 20),
+                  ],
+                ),
                 const SizedBox(height: 66),
                 Text(
                   'Your Order has been \n accepted',

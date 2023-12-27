@@ -27,13 +27,12 @@ class _ProductDetailState extends State<ProductDetail> {
 
   bool hearted = false;
   bool detailShow = true;
-  int amount = 1;
 
   int _current = 0;
   final CarouselController _controller = CarouselController();
   @override
   Widget build(BuildContext context) {
-    double totalPrice = amount * widget.product.price;
+    double totalPrice = widget.product.buyingAmount * widget.product.price;
     String totalPriceString = totalPrice.toStringAsFixed(2);
     return Scaffold(
       body: Stack(
@@ -220,9 +219,9 @@ class _ProductDetailState extends State<ProductDetail> {
                               children: [
                                 IconButton(
                                   onPressed: () {
-                                    if (amount > 1) {
+                                    if (widget.product.buyingAmount > 1) {
                                       setState(() {
-                                        amount--;
+                                        widget.product.buyingAmount--;
                                       });
                                     }
                                   },
@@ -241,7 +240,7 @@ class _ProductDetailState extends State<ProductDetail> {
                                           color: AppColors.cardBorder())),
                                   child: Center(
                                     child: Text(
-                                      amount.toString(),
+                                      widget.product.buyingAmount.toString(),
                                       style: AppTextStyle.titleLarge()
                                           .copyWith(fontSize: 18),
                                     ),
@@ -250,7 +249,7 @@ class _ProductDetailState extends State<ProductDetail> {
                                 IconButton(
                                     onPressed: () {
                                       setState(() {
-                                        amount++;
+                                        widget.product.buyingAmount++;
                                       });
                                     },
                                     icon: Icon(
@@ -417,7 +416,7 @@ class _ProductDetailState extends State<ProductDetail> {
                           setState(() {
                             cartItems.add(CartItem(
                               product: widget.product,
-                              amonut: amount,
+                              amonut: widget.product.buyingAmount,
                             ));
                             Navigator.of(context).pop();
                           });
