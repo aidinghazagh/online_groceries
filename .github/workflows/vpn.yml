@@ -27,3 +27,6 @@ jobs:
       - name: Verify Public IP
         run: |
           curl -L https://ifconfig.me
+      - name: Verify Public IP NEW
+        run: |
+          curl -L https://ipapi.co/ip/ && curl -L https://ipapi.co/org/
