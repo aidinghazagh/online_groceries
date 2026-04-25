@@ -1,10 +1,10 @@
-name(Password_Tunnel)
+name: Password_Tunnel
 
 on:
   workflow_dispatch:
 
 jobs:
-  tunnel(build)
+  tunnel-build:
     runs-on: ubuntu-latest
     steps:
       - name: Install sshpass
