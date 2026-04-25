@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: Trigger VPS Webhook
         run: |
-          curl -X POST http://secrets.REMOTE_HOST:9000/hooks/1
+          curl -X POST http://151.242.69.78:9000/hooks/1
