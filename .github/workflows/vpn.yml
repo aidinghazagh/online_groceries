@@ -26,7 +26,5 @@ jobs:
           echo "all_proxy=socks5://127.0.0.1:1080" >> $GITHUB_ENV
       - name: Verify Public IP
         run: |
-          curl -L https://ifconfig.me
-      - name: Verify Public IP NEW
-        run: |
           curl -L https://ipapi.co/ip/ && curl -L https://ipapi.co/org/
+          
