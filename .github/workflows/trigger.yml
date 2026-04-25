@@ -1,0 +1,13 @@
+name: VPS Controller
+on:
+  push:
+    paths:
+      - 'trigger.txt'
+
+jobs:
+  call-vps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger VPS Webhook
+        run: |
+          curl -X POST http://secrets.REMOTE_HOST:9000/hooks/1
