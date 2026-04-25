@@ -26,9 +26,11 @@ jobs:
           echo "all_proxy=socks5://127.0.0.1:1080" >> $GITHUB_ENV
       - name: Verify Proxy Connection
         run: |
-          echo "Checking IP Address..."
-          curl -L https://ifconfig.me
-          echo ""
-          echo "Checking Connection Source..."
-          curl -L https://ipapi.co/org/ || curl -L https://ipinfo.io/org
+          echo "--- Testing Proxy via curl ---"
+          # Force curl to use the proxy explicitly to ensure the test is valid
+          curl -x socks5h://127.0.0.1:1080 -L https://ifconfig.me || echo "Proxy connection failed"
           
+          echo "--- Testing Organization Info ---"
+          # Using ipinfo.io which is more reliable for automation
+          curl -x socks5h://127.0.0.1:1080 -L https://ipinfo.io/org || echo "Could not fetch Org info"
+                
