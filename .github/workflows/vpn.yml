@@ -1,0 +1,19 @@
+name(Password_Tunnel)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  tunnel(build)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install sshpass
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sshpass
+
+      - name: Create Reverse Tunnel
+        run: |
+          # sshpass allows passing the password via the secret
+          # -o StrictHostKeyChecking=no prevents the "Are you sure?" prompt
+          sshpass -p "${{ secrets.REMOTE_PASSWORD }}" ssh -o StrictHostKeyChecking=no -R 8080:localhost:80 ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} -N
